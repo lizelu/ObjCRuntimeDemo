@@ -11,7 +11,7 @@
 @interface RuntimeKit : NSObject
 
 /**
- 获取类的属性列表
+ 获取类的属性列表, 包括私有和公有属性，即定义在延展中的属性
 
  @param class Class
  @return 属性列表数组

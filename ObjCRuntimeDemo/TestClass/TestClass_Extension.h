@@ -9,5 +9,5 @@
 #import "TestClass.h"
 
 @interface TestClass ()
-
+@property (nonatomic, strong) NSString * extensionProperty;
 @end
