@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F482C91E1E1CEB66009021C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F482C91D1E1CEB66009021C7 /* main.m */; };
+		F4ED27961E1CF1CE006126CA /* TestClass+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27921E1CF1CE006126CA /* TestClass+Category.m */; };
+		F4ED27971E1CF1CE006126CA /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27941E1CF1CE006126CA /* TestClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,11 @@
 /* Begin PBXFileReference section */
 		F482C91A1E1CEB66009021C7 /* ObjCRuntimeDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjCRuntimeDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		F482C91D1E1CEB66009021C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4ED27911E1CF1CE006126CA /* TestClass+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestClass+Category.h"; sourceTree = "<group>"; };
+		F4ED27921E1CF1CE006126CA /* TestClass+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestClass+Category.m"; sourceTree = "<group>"; };
+		F4ED27931E1CF1CE006126CA /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
+		F4ED27941E1CF1CE006126CA /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
+		F4ED27951E1CF1CE006126CA /* TestClass_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass_Extension.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +64,30 @@
 		F482C91C1E1CEB66009021C7 /* ObjCRuntimeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4ED278F1E1CF1CE006126CA /* Runtime */,
+				F4ED27901E1CF1CE006126CA /* TestClass */,
 				F482C91D1E1CEB66009021C7 /* main.m */,
 			);
 			path = ObjCRuntimeDemo;
+			sourceTree = "<group>";
+		};
+		F4ED278F1E1CF1CE006126CA /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		F4ED27901E1CF1CE006126CA /* TestClass */ = {
+			isa = PBXGroup;
+			children = (
+				F4ED27911E1CF1CE006126CA /* TestClass+Category.h */,
+				F4ED27921E1CF1CE006126CA /* TestClass+Category.m */,
+				F4ED27931E1CF1CE006126CA /* TestClass.h */,
+				F4ED27941E1CF1CE006126CA /* TestClass.m */,
+				F4ED27951E1CF1CE006126CA /* TestClass_Extension.h */,
+			);
+			path = TestClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ED27971E1CF1CE006126CA /* TestClass.m in Sources */,
+				F4ED27961E1CF1CE006126CA /* TestClass+Category.m in Sources */,
 				F482C91E1E1CEB66009021C7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +279,7 @@
 				F482C9231E1CEB66009021C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
