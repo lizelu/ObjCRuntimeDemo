@@ -32,7 +32,6 @@
 		F4ED27921E1CF1CE006126CA /* TestClass+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestClass+Category.m"; sourceTree = "<group>"; };
 		F4ED27931E1CF1CE006126CA /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
 		F4ED27941E1CF1CE006126CA /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
-		F4ED27951E1CF1CE006126CA /* TestClass_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass_Extension.h; sourceTree = "<group>"; };
 		F4ED27981E1CF54F006126CA /* RuntimeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeKit.h; sourceTree = "<group>"; };
 		F4ED27991E1CF54F006126CA /* RuntimeKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +89,6 @@
 				F4ED27941E1CF1CE006126CA /* TestClass.m */,
 				F4ED27911E1CF1CE006126CA /* TestClass+Category.h */,
 				F4ED27921E1CF1CE006126CA /* TestClass+Category.m */,
-				F4ED27951E1CF1CE006126CA /* TestClass_Extension.h */,
 			);
 			path = TestClass;
 			sourceTree = "<group>";

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TestClass.h"
 #import "TestClass+Category.h"
-#import "TestClass_Extension.h"
 
 #import "RuntimeKit.h"
 int main(int argc, const char * argv[]) {
