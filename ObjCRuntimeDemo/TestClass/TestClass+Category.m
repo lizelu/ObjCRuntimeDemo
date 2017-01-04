@@ -9,5 +9,7 @@
 #import "TestClass+Category.h"
 
 @implementation TestClass (Category)
-
+- (void)categoryMethod {
+    NSLog(@"categoryMethod");
+}
 @end

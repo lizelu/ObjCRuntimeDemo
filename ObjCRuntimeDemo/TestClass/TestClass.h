@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface TestClass : NSObject
+@property (nonatomic, strong) NSString *publicProperty1;
+@property (nonatomic, strong) NSString *publicProperty2;
 
+- (void)publicTestMethod1;
+- (void)publicTestMethod2;
 @end

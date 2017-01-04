@@ -10,6 +10,7 @@
 		F482C91E1E1CEB66009021C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F482C91D1E1CEB66009021C7 /* main.m */; };
 		F4ED27961E1CF1CE006126CA /* TestClass+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27921E1CF1CE006126CA /* TestClass+Category.m */; };
 		F4ED27971E1CF1CE006126CA /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27941E1CF1CE006126CA /* TestClass.m */; };
+		F4ED279A1E1CF54F006126CA /* RuntimeKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27991E1CF54F006126CA /* RuntimeKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		F4ED27931E1CF1CE006126CA /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
 		F4ED27941E1CF1CE006126CA /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		F4ED27951E1CF1CE006126CA /* TestClass_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass_Extension.h; sourceTree = "<group>"; };
+		F4ED27981E1CF54F006126CA /* RuntimeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeKit.h; sourceTree = "<group>"; };
+		F4ED27991E1CF54F006126CA /* RuntimeKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 		F4ED278F1E1CF1CE006126CA /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				F4ED27981E1CF54F006126CA /* RuntimeKit.h */,
+				F4ED27991E1CF54F006126CA /* RuntimeKit.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -81,10 +86,10 @@
 		F4ED27901E1CF1CE006126CA /* TestClass */ = {
 			isa = PBXGroup;
 			children = (
-				F4ED27911E1CF1CE006126CA /* TestClass+Category.h */,
-				F4ED27921E1CF1CE006126CA /* TestClass+Category.m */,
 				F4ED27931E1CF1CE006126CA /* TestClass.h */,
 				F4ED27941E1CF1CE006126CA /* TestClass.m */,
+				F4ED27911E1CF1CE006126CA /* TestClass+Category.h */,
+				F4ED27921E1CF1CE006126CA /* TestClass+Category.m */,
 				F4ED27951E1CF1CE006126CA /* TestClass_Extension.h */,
 			);
 			path = TestClass;
@@ -151,6 +156,7 @@
 				F4ED27971E1CF1CE006126CA /* TestClass.m in Sources */,
 				F4ED27961E1CF1CE006126CA /* TestClass+Category.m in Sources */,
 				F482C91E1E1CEB66009021C7 /* main.m in Sources */,
+				F4ED279A1E1CF54F006126CA /* RuntimeKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
