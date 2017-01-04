@@ -7,13 +7,21 @@
 //
 
 #import "TestClass.h"
-@interface TestClass()
+@interface TestClass(){
+    NSString *_var1;
+    NSString *_var2;
+}
 @property (nonatomic, strong) NSString *privateProperty1;
 @property (nonatomic, strong) NSString *privateProperty2;
 @end
 
 @implementation TestClass
-- (void)publicTestMethod1 {
+
++ (void)classMethod: (NSString *)value {
+    NSLog(@"publicTestMethod1");
+}
+
+- (void)publicTestMethod1: (NSString *)value1 Second: (NSString *)value2 {
     NSLog(@"publicTestMethod1");
 }
 
