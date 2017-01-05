@@ -11,6 +11,9 @@
 		F4ED27961E1CF1CE006126CA /* TestClass+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27921E1CF1CE006126CA /* TestClass+Category.m */; };
 		F4ED27971E1CF1CE006126CA /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27941E1CF1CE006126CA /* TestClass.m */; };
 		F4ED279A1E1CF54F006126CA /* RuntimeKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27991E1CF54F006126CA /* RuntimeKit.m */; };
+		F4ED27A21E1E2CA4006126CA /* TestClass+SwapMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27A11E1E2CA4006126CA /* TestClass+SwapMethod.m */; };
+		F4ED27A51E1E2D09006126CA /* TestClass+AssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27A41E1E2D09006126CA /* TestClass+AssociatedObject.m */; };
+		F4ED27A81E1E2ED5006126CA /* AddMethodClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED27A71E1E2ED5006126CA /* AddMethodClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +37,12 @@
 		F4ED27941E1CF1CE006126CA /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		F4ED27981E1CF54F006126CA /* RuntimeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeKit.h; sourceTree = "<group>"; };
 		F4ED27991E1CF54F006126CA /* RuntimeKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeKit.m; sourceTree = "<group>"; };
+		F4ED27A01E1E2CA4006126CA /* TestClass+SwapMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestClass+SwapMethod.h"; sourceTree = "<group>"; };
+		F4ED27A11E1E2CA4006126CA /* TestClass+SwapMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestClass+SwapMethod.m"; sourceTree = "<group>"; };
+		F4ED27A31E1E2D09006126CA /* TestClass+AssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestClass+AssociatedObject.h"; sourceTree = "<group>"; };
+		F4ED27A41E1E2D09006126CA /* TestClass+AssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestClass+AssociatedObject.m"; sourceTree = "<group>"; };
+		F4ED27A61E1E2ED5006126CA /* AddMethodClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMethodClass.h; sourceTree = "<group>"; };
+		F4ED27A71E1E2ED5006126CA /* AddMethodClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMethodClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,12 @@
 				F4ED27941E1CF1CE006126CA /* TestClass.m */,
 				F4ED27911E1CF1CE006126CA /* TestClass+Category.h */,
 				F4ED27921E1CF1CE006126CA /* TestClass+Category.m */,
+				F4ED27A01E1E2CA4006126CA /* TestClass+SwapMethod.h */,
+				F4ED27A11E1E2CA4006126CA /* TestClass+SwapMethod.m */,
+				F4ED27A31E1E2D09006126CA /* TestClass+AssociatedObject.h */,
+				F4ED27A41E1E2D09006126CA /* TestClass+AssociatedObject.m */,
+				F4ED27A61E1E2ED5006126CA /* AddMethodClass.h */,
+				F4ED27A71E1E2ED5006126CA /* AddMethodClass.m */,
 			);
 			path = TestClass;
 			sourceTree = "<group>";
@@ -151,10 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ED27A81E1E2ED5006126CA /* AddMethodClass.m in Sources */,
 				F4ED27971E1CF1CE006126CA /* TestClass.m in Sources */,
+				F4ED27A51E1E2D09006126CA /* TestClass+AssociatedObject.m in Sources */,
 				F4ED27961E1CF1CE006126CA /* TestClass+Category.m in Sources */,
 				F482C91E1E1CEB66009021C7 /* main.m in Sources */,
 				F4ED279A1E1CF54F006126CA /* RuntimeKit.m in Sources */,
+				F4ED27A21E1E2CA4006126CA /* TestClass+SwapMethod.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

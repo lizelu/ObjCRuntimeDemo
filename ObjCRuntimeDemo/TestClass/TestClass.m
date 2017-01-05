@@ -7,7 +7,7 @@
 //
 
 #import "TestClass.h"
-#import <objc/runtime.h>
+#import "RuntimeKit.h"
 @interface TestClass(){
     NSString *_var1;
     NSString *_var2;
@@ -43,7 +43,6 @@
     NSLog(@"OC替换的方法：%@", value);
 }
 
-
 + (BOOL)resolveInstanceMethod:(SEL)sel {
     IMP method = [self instanceMethodForSelector:@selector(dynamicAddMethod:)];
     class_addMethod(self, sel, (IMP)method, "v@:*");
@@ -56,5 +55,11 @@
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
 
+}
+
+#pragma mark - 方法交换
+
+- (void)method1 {
+    NSLog(@"我是Method1的实现");
 }
 @end

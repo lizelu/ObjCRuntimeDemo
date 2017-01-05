@@ -7,7 +7,6 @@
 //
 
 #import "RuntimeKit.h"
-#import <objc/runtime.h>
 
 @implementation RuntimeKit
 
@@ -90,5 +89,18 @@
     
     return [NSArray arrayWithArray:mutableList];
     return nil;
+}
+
+/**
+ 方法交换
+ 
+ @param class 交换方法所在的类
+ @param method1 方法1
+ @param method2 方法2
+ */
++ (void)methodSwap: (Class)class firstMethod: (SEL)method1 secondMethod: (SEL)method2 {
+    Method firstMethod = class_getInstanceMethod(class, method1);
+    Method secondMethod = class_getInstanceMethod(class, method2);
+    method_exchangeImplementations(firstMethod, secondMethod);
 }
 @end

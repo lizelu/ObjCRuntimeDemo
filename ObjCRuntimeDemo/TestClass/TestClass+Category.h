@@ -9,7 +9,5 @@
 #import "TestClass.h"
 
 @interface TestClass (Category)
-@property (nonatomic, strong) NSString *dynamicAddProperty;
-
 - (void)categoryMethod;
 @end

@@ -15,4 +15,6 @@
 + (void)classMethod: (NSString *)value;
 - (void)publicTestMethod1: (NSString *)value1 Second: (NSString *)value2;
 - (void)publicTestMethod2;
+
+- (void)method1;
 @end
