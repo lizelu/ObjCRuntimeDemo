@@ -22,12 +22,15 @@
     
     NSMutableArray *mutableList = [NSMutableArray arrayWithCapacity:count];
     for (unsigned int i = 0; i < count; i++ ) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:2];
         const char *ivarName = ivar_getName(ivarList[i]);
-        [mutableList addObject:[NSString stringWithUTF8String: ivarName]];
+        const char *ivarType = ivar_getTypeEncoding(ivarList[i]);
+        dic[@"type"] = [NSString stringWithUTF8String: ivarType];
+        dic[@"ivarName"] = [NSString stringWithUTF8String: ivarName];
+        [mutableList addObject:dic];
     }
-    
+    free(ivarList);
     return [NSArray arrayWithArray:mutableList];
-    return nil;
 }
 
 /**
@@ -43,9 +46,11 @@
     NSMutableArray *mutableList = [NSMutableArray arrayWithCapacity:count];
     for (unsigned int i = 0; i < count; i++ ) {
         const char *propertyName = property_getName(propertyList[i]);
+        const char *propertyAttributes = property_getAttributes(propertyList[i]);
+        NSLog(@"%@", [NSString stringWithUTF8String: propertyAttributes]);
         [mutableList addObject:[NSString stringWithUTF8String: propertyName]];
     }
-    
+    free(propertyList);
     return [NSArray arrayWithArray:mutableList];
 }
 
@@ -66,7 +71,7 @@
         SEL methodName = method_getName(method);
         [mutableList addObject:NSStringFromSelector(methodName)];
     }
-    
+    free(methodList);
     return [NSArray arrayWithArray:mutableList];
 }
 
@@ -89,6 +94,21 @@
     
     return [NSArray arrayWithArray:mutableList];
     return nil;
+}
+
+
+/**
+ 添加往类上添加新的方法与其实现
+
+ @param class 相应的类
+ @param methodSel 方法的名
+ @param methodSelImpl 对应方法实现的方法名
+ */
++ (void)addMethod: (Class)class method: (SEL)methodSel method: (SEL)methodSelImpl {
+    Method method = class_getInstanceMethod(class, methodSelImpl);
+    IMP methodIMP = method_getImplementation(method);
+    const char *types = method_getTypeEncoding(method);
+    class_addMethod(class, methodSel, methodIMP, types);
 }
 
 /**

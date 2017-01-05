@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TestClass : NSObject<NSCoding, NSCopying>
-@property (nonatomic, strong) NSString *publicProperty1;
+@property (nonatomic, strong) NSArray *publicProperty1;
 @property (nonatomic, strong) NSString *publicProperty2;
 
 + (void)classMethod: (NSString *)value;

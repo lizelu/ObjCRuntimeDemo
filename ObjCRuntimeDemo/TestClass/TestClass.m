@@ -9,11 +9,15 @@
 #import "TestClass.h"
 #import "RuntimeKit.h"
 @interface TestClass(){
-    NSString *_var1;
-    NSString *_var2;
+    NSInteger _var1;
+    int _var2;
+    BOOL _var3;
+    double _var4;
+    float _var5;
 }
-@property (nonatomic, strong) NSString *privateProperty1;
-@property (nonatomic, strong) NSString *privateProperty2;
+@property (nonatomic, strong) NSMutableArray *privateProperty1;
+@property (nonatomic, strong) NSNumber *privateProperty2;
+@property (nonatomic, strong) NSDictionary *privateProperty3;
 @end
 
 @implementation TestClass
@@ -44,17 +48,12 @@
 }
 
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-    IMP method = [self instanceMethodForSelector:@selector(dynamicAddMethod:)];
-    class_addMethod(self, sel, (IMP)method, "v@:*");
+    [RuntimeKit addMethod:[self class] method:sel method:@selector(dynamicAddMethod:)];
+//    Method method = class_getInstanceMethod([self class], @selector(dynamicAddMethod:));
+//    IMP methodIMP = method_getImplementation(method);
+//    const char *types = method_getTypeEncoding(method);
+//    class_addMethod(self, sel, methodIMP, types);
     return YES;
-}
-
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    return nil;
-}
-
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-
 }
 
 #pragma mark - 方法交换

@@ -11,11 +11,11 @@
 #import "TestClass+Category.h"
 #import "TestClass+AssociatedObject.h"
 #import "TestClass+SwapMethod.h"
-#import "AddMethodClass.h"
 
 #import "RuntimeKit.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
         NSArray *ivarList = [RuntimeKit fetchIvarList:[TestClass class]];
         NSLog(@"\n获取TestClass的成员变量列表:%@", ivarList);
         
@@ -27,13 +27,13 @@ int main(int argc, const char * argv[]) {
         
         NSArray *protocolList = [RuntimeKit fetchProtocolList:[TestClass class]];
         NSLog(@"\n获取TestClass的协议列表：%@", protocolList);
-
         TestClass *instance = [TestClass new];
         [instance publicTestMethod2];
         [instance performSelector:@selector(noThisMethod:) withObject:@"实例方法参数"];
         
         instance.dynamicAddProperty = @"我是动态添加的属性";
         NSLog(@"%@", instance.dynamicAddProperty);
+        
         
         [instance swapMethod];
         [instance method1];

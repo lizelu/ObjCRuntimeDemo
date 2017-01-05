@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 @interface RuntimeKit : NSObject
 
@@ -43,6 +44,7 @@
  */
 + (NSArray *)fetchProtocolList:(Class) class;
 
++ (void)addMethod: (Class)class method: (SEL)methodSel method: (SEL)methodSelImpl ;
 
 /**
  方法交换
