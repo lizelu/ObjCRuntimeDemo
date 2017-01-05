@@ -7,6 +7,7 @@
 //
 
 #import "TestClass.h"
+#import <objc/runtime.h>
 @interface TestClass(){
     NSString *_var1;
     NSString *_var2;
@@ -37,4 +38,23 @@
     NSLog(@"privateTestMethod2");
 }
 
+//运行时方法拦截
+- (void)dynamicAddMethod: (NSString *) value {
+    NSLog(@"OC替换的方法：%@", value);
+}
+
+
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    IMP method = [self instanceMethodForSelector:@selector(dynamicAddMethod:)];
+    class_addMethod(self, sel, (IMP)method, "v@:*");
+    return YES;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return nil;
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+
+}
 @end
