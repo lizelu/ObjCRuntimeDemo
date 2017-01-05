@@ -49,16 +49,25 @@
 
 + (BOOL)resolveInstanceMethod:(SEL)sel {
     [RuntimeKit addMethod:[self class] method:sel method:@selector(dynamicAddMethod:)];
-//    Method method = class_getInstanceMethod([self class], @selector(dynamicAddMethod:));
-//    IMP methodIMP = method_getImplementation(method);
-//    const char *types = method_getTypeEncoding(method);
-//    class_addMethod(self, sel, methodIMP, types);
     return YES;
 }
 
 #pragma mark - 方法交换
-
 - (void)method1 {
     NSLog(@"我是Method1的实现");
 }
+
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
+
+    //查找方法签名
+    NSMethodSignature *signature = [super methodSignatureForSelector:selector];
+    return signature;
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation {
+    [invocation invokeWithTarget:nil];
+}
+
+
 @end
