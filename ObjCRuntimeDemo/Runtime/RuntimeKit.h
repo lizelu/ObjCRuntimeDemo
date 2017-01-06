@@ -11,6 +11,13 @@
 #import <objc/message.h>
 
 @interface RuntimeKit : NSObject
+/**
+ 获取类名
+ 
+ @param class 相应类
+ @return NSString：类名
+ */
++ (NSString *)fetchClassName: (Class)class;
 
 /**
  获取成员变量

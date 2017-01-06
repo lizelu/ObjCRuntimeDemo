@@ -11,12 +11,23 @@
 @implementation RuntimeKit
 
 /**
+ 获取类名
+
+ @param class 相应类
+ @return NSString：类名
+ */
++ (NSString *)fetchClassName: (Class)class {
+    const char *className = class_getName(class);
+    return [NSString stringWithUTF8String:className];
+}
+
+/**
  获取成员变量
  
- @param class <#class description#>
- @return <#return value description#>
+ @param class Class
+ @return NSArray
  */
-+ (NSArray *)fetchIvarList:(Class) class {
++ (NSArray *)fetchIvarList: (Class)class {
     unsigned int count = 0;
     Ivar *ivarList = class_copyIvarList(class, &count);
     
@@ -27,6 +38,7 @@
         const char *ivarType = ivar_getTypeEncoding(ivarList[i]);
         dic[@"type"] = [NSString stringWithUTF8String: ivarType];
         dic[@"ivarName"] = [NSString stringWithUTF8String: ivarName];
+        
         [mutableList addObject:dic];
     }
     free(ivarList);
@@ -39,15 +51,13 @@
  @param class Class
  @return 属性列表数组
  */
-+ (NSArray *)fetchPropertyList:(Class) class {
++ (NSArray *)fetchPropertyList: (Class)class {
     unsigned int count = 0;
     objc_property_t *propertyList = class_copyPropertyList(class, &count);
     
     NSMutableArray *mutableList = [NSMutableArray arrayWithCapacity:count];
     for (unsigned int i = 0; i < count; i++ ) {
         const char *propertyName = property_getName(propertyList[i]);
-        const char *propertyAttributes = property_getAttributes(propertyList[i]);
-        NSLog(@"%@", [NSString stringWithUTF8String: propertyAttributes]);
         [mutableList addObject:[NSString stringWithUTF8String: propertyName]];
     }
     free(propertyList);
@@ -61,7 +71,7 @@
  @param class <#class description#>
  @return <#return value description#>
  */
-+ (NSArray *)fetchMethodList:(Class) class {
++ (NSArray *)fetchMethodList: (Class)class {
     unsigned int count = 0;
     Method *methodList = class_copyMethodList(class, &count);
     
@@ -81,7 +91,7 @@
  @param class <#class description#>
  @return <#return value description#>
  */
-+ (NSArray *)fetchProtocolList:(Class) class {
++ (NSArray *)fetchProtocolList: (Class)class {
     unsigned int count = 0;
     __unsafe_unretained Protocol **protocolList = class_copyProtocolList(class, &count);
     
