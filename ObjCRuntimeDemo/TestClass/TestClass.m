@@ -20,9 +20,6 @@
 @end
 
 
-
-
-
 @interface TestClass(){
     NSInteger _var1;
     int _var2;
@@ -57,7 +54,7 @@
     NSLog(@"privateTestMethod2");
 }
 
-#pragma mark - 方法交换
+#pragma mark - 方法交换时使用
 - (void)method1 {
     NSLog(@"我是Method1的实现");
 }
@@ -92,8 +89,14 @@
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
-//    NSString *sel = NSStringFromSelector(selector);
-    return [NSMethodSignature signatureWithObjCTypes:"@@:"];
+    //查找父类的方法签名
+    NSMethodSignature *signature = [super methodSignatureForSelector:selector];
+    if(signature == nil) {
+//        NSString *sel = NSStringFromSelector(selector);
+        signature = [NSMethodSignature signatureWithObjCTypes:"@@:"];
+
+    }
+    return signature;
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
