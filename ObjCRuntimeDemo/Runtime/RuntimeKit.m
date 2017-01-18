@@ -66,7 +66,7 @@
 
 
 /**
- 获取类的属性列表：getter, setter, 对象方法等。但不能获取类方法
+ 获取类的实例方法列表：getter, setter, 对象方法等。但不能获取类方法
 
  @param class <#class description#>
  @return <#return value description#>

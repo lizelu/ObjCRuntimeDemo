@@ -16,6 +16,9 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        NSString *className = [RuntimeKit fetchClassName:[TestClass class]];
+        NSLog(@"测试类的类名为：%@\n", className);
+        
         NSArray *ivarList = [RuntimeKit fetchIvarList:[TestClass class]];
         NSLog(@"\n获取TestClass的成员变量列表:%@", ivarList);
         

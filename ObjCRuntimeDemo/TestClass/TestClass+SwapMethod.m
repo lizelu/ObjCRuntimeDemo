@@ -9,6 +9,7 @@
 #import "TestClass+SwapMethod.h"
 #import "RuntimeKit.h"
 @implementation TestClass (SwapMethod)
+
 - (void)swapMethod {
     [RuntimeKit methodSwap:[self class]
                firstMethod:@selector(method1)
