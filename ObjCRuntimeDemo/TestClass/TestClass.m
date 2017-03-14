@@ -71,7 +71,7 @@
  @return 找到其他的执行方法，并返回yes
  */
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-//    return NO;    //当返回NO时，会接着执行forwordingTargetForSelector:方法，
+    return NO;    //当返回NO时，会接着执行forwordingTargetForSelector:方法，
     [RuntimeKit addMethod:[self class] method:sel method:@selector(dynamicAddMethod:)];
     return YES;
 }
@@ -84,7 +84,7 @@
  @return 存在该SEL的对象
  */
 - (id)forwardingTargetForSelector:(SEL)aSelector {
-//    return self;
+    return self;
     return [SecondClass new];   //让SecondClass中相应的SEL去执行该方法
 }
 
@@ -92,7 +92,6 @@
     //查找父类的方法签名
     NSMethodSignature *signature = [super methodSignatureForSelector:selector];
     if(signature == nil) {
-//        NSString *sel = NSStringFromSelector(selector);
         signature = [NSMethodSignature signatureWithObjCTypes:"@@:"];
 
     }
@@ -100,9 +99,13 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
-    //拿到函数名
-    NSString *key = NSStringFromSelector([invocation selector]);
-    NSLog(@"%@", key);
+    SecondClass * forwardClass = [SecondClass new];
+    SEL sel = invocation.selector;
+    if ([forwardClass respondsToSelector:sel]) {
+        [invocation invokeWithTarget:forwardClass];
+    } else {
+        [self doesNotRecognizeSelector:sel];
+    }
 }
 
 @end

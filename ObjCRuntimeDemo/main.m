@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "TestClass.h"
 #import "TestClass+Category.h"
-#import "TestClass+AssociatedObject.h"
 #import "TestClass+SwapMethod.h"
+
+#import "TestClass+AssociatedObject.h"
 
 #import "RuntimeKit.h"
 int main(int argc, const char * argv[]) {
