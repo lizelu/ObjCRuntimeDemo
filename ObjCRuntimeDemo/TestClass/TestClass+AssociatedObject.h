@@ -11,3 +11,4 @@
 @interface TestClass (AssociatedObject)
 @property (nonatomic, strong) NSString *dynamicAddProperty;
 @end
+
